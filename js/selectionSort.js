@@ -14,3 +14,13 @@ function selectionSort(arr){
 }
 console.log(selectionSort([23,56,35,67,43]));
 
+function add(num){
+    var a=0;
+    for(var i=0;i<=num;i++){
+        a=a+i;
+    }
+    return a;
+
+}
+console.log(add(4));
+
