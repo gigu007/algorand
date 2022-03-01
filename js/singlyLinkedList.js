@@ -104,6 +104,17 @@ class singlyLinkedList{
         this.length++;
         return true;
     }
+    remove(index){
+        if(index <0 || index>=this.length)return null;
+        if(index===0)return this.shift();
+        if(index===this.length-1)return this.pop();
+        var prev=this.get(index-1);
+        var removedNode=prev.next;
+        prev.next=removedNode.next;
+        removedNode.next=null;
+        this.length--
+        console.log(removedNode);
+    }
 }
 let list=new singlyLinkedList();
 list.push('the first');
@@ -115,5 +126,6 @@ list.shift();
 list.get(3);
 list.set(2,'newNum');
 list.insert(3,'yellow');
+list.remove(2);
 
 
