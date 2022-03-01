@@ -25,6 +25,25 @@ class singlyLinkedList{
         this.length++;
         return this;
     }
+    get(index){
+        if(index <0 || index >=this.length)return null;
+        var counter=0;
+        var current=this.head;
+        while(counter !==index){
+            current=current.next;
+            counter++;
+        }
+        return current;
+       
+    }
+    set(index,val){
+        var foundNode=this.get(index);
+        if(foundNode){
+            foundNode.val=val;
+            return true;
+        }
+        return false;
+    }
     shift(){
         if(!this.head)return undefined;
         if(this.length===1){
@@ -81,3 +100,5 @@ list.push('third');
 list.unshift('zero');
 list.push('minizero');
 list.shift();
+list.get(3);
+list.set(2,'newNum');
