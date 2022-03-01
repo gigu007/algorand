@@ -92,6 +92,18 @@ class singlyLinkedList{
         this.length++;
         return this;
     }
+    insert(index,val){
+        if(index <0 || index >this.length)return null;
+        if(index===0)return !!this.unshift(val);//!! is used because the unshift/push function did no return a boolean
+        if(index===this.length)return !!this.push(val);
+        var newNode=new Node(val)
+        var prev=this.get(index-1);
+        var temp=prev.next;
+        prev.next=newNode;
+        newNode.next=temp;
+        this.length++;
+        return true;
+    }
 }
 let list=new singlyLinkedList();
 list.push('the first');
@@ -102,3 +114,6 @@ list.push('minizero');
 list.shift();
 list.get(3);
 list.set(2,'newNum');
+list.insert(3,'yellow');
+
+
