@@ -115,6 +115,19 @@ class singlyLinkedList{
         this.length--
         console.log(removedNode);
     }
+    reverse(arr){
+        var node=this.head;
+        this.head=this.tail;
+        this.tail=node;
+        var prev=null;
+        var next
+        for(var i=0;i<arr.length;i++){
+            next=node.next;
+            node.next=prev;
+            node=next;
+        }
+        return arr;
+    }
 }
 let list=new singlyLinkedList();
 list.push('the first');
