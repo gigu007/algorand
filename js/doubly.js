@@ -44,6 +44,39 @@ class doublyLinkedList{
         return this;
         
     }
+    pop(){
+        
+        if(this.length===0)return undefined;
+        var poppedNode=this.tail;
+        if(this.lenth===1){
+            this.head=null;
+            this.tail=null;
+        }
+        
+        else{
+            
+            this.tail=poppedNode.prev;
+            this.tail.next=null;
+            poppedNode.prev=null;
+        }
+        this.length--;
+        return poppedNode;
+    }
+    shift(){
+       if(!this.head)return undefined;
+       var poppedNode=this.head;
+       if(this.length===1){
+           this.head=null;
+           this.tail=null;
+       }
+       else{
+           this.head=poppedNode.next;
+           this.head.prev=null;
+           poppedNode.next=null;
+       }
+       this.length--;
+       return poppedNode;
+    }
     
 
 }
@@ -52,3 +85,4 @@ var list=new doublyLinkedList();
 list.push(1);
 list.push(2);
 list.unshift('zero');
+list.pop();
