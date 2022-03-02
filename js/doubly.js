@@ -77,8 +77,25 @@ class doublyLinkedList{
        this.length--;
        return poppedNode;
     }
+    get(index){
     
-
+        if(index<0 || index>=this.length)return undefined;
+        var count=0;
+        var current=this.head;
+        while(count !==index){
+            current=current.next;
+            count++;
+        }
+        return current;
+    }
+    set(index,val){
+       var foundNode=this.get(index);
+       if(foundNode !==null){
+           foundNode.val=val;
+           return true;
+       }
+       return false;
+    }
 }
 
 var list=new doublyLinkedList();
@@ -86,3 +103,4 @@ list.push(1);
 list.push(2);
 list.unshift('zero');
 list.pop();
+list.set(2,'new');
