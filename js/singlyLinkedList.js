@@ -120,10 +120,11 @@ class singlyLinkedList{
         this.head=this.tail;
         this.tail=node;
         var prev=null;
-        var next
+        var next;
         for(var i=0;i<arr.length;i++){
             next=node.next;
             node.next=prev;
+            prev=node;
             node=next;
         }
         return arr;
