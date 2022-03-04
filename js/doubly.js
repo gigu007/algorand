@@ -89,6 +89,9 @@ class doublyLinkedList{
         return current;
     }
     set(index,val){
+        if(index <0 ||index>this.length)
+        if(index===0)return this.unshift(val);
+        if(index===this.length )return this.push(val);
        var foundNode=this.get(index);
        if(foundNode !==null){
            foundNode.val=val;
@@ -96,6 +99,33 @@ class doublyLinkedList{
        }
        return false;
     }
+    insert(index,val){
+        if(index <0 ||index>this.length)return null;
+        if(index===0)return this.unshift(val);
+        if(index===this.length )return this.push(val);
+        var newNode=new Node(val) ;
+        var prev =this.get(index-1);
+        var temp=prev.next;
+        prev.next=newNode;
+        newNode.next=temp;
+        temp.prev=newNode;
+        this.length++;
+        return this;
+    }
+    remove(index){
+        if(index <0 ||index>=this.length)return null;
+        if(index===0)return this.shift();
+        if(index===this.length-1)return this.pop();
+        var prev=this.get(index-1);
+        var temp=prev.next;
+        prev.next=temp.next;
+        temp.next=null;
+        temp.prev=null;
+       this.length--;
+       return temp;
+
+    }
+    
 }
 
 var list=new doublyLinkedList();
@@ -104,3 +134,6 @@ list.push(2);
 list.unshift('zero');
 list.pop();
 list.set(2,'new');
+list.insert(1,'chebe');
+
+
