@@ -126,14 +126,15 @@ class doublyLinkedList{
 
     }
     
+    
 }
 
-var list=new doublyLinkedList();
-list.push(1);
-list.push(2);
-list.unshift('zero');
-list.pop();
-list.set(2,'new');
-list.insert(1,'chebe');
+var tree=new doublyLinkedList();
+tree.insert(1);
+tree.insert(2);
+tree.unshift('zero');
+tree.pop();
+tree.set(2,'new');
+tree.insert(1,'chebe');
 
 

@@ -131,15 +131,15 @@ class singlyLinkedList{
     }
 }
 let list=new singlyLinkedList();
-list.push('the first');
-list.push('second');
-list.push('third');
-list.unshift('zero');
-list.push('minizero');
-list.shift();
-list.get(3);
-list.set(2,'newNum');
-list.insert(3,'yellow');
-list.remove(2);
+tree.insert('the first');
+tree.insert('second');
+tree.insert('third');
+tree.unshift('zero');
+tree.insert('minizero');
+tree.shift();
+tree.get(3);
+tree.set(2,'newNum');
+tree.insert(3,'yellow');
+tree.remove(2);
 
 

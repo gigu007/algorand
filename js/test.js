@@ -27,7 +27,7 @@ class doublyLinklyList{
         this.length++;
         return this;
     }
-    push(val){
+    insert(val){
         var newNode=new Node(val);
         if(!this.head){
             this.head=newNode;
@@ -86,7 +86,7 @@ class doublyLinklyList{
     set(index,val){
        
         if(index===0)return this.unshift(val);
-        if(index===this.length)return this.push(val);
+        if(index===this.length)return this.insert(val);
         var foundNode=this.get(index);
         if(foundNode){
             foundNode.val=val;
@@ -99,7 +99,7 @@ class doublyLinklyList{
         var newNode=new Node(val);
         if(index===0)return !!this.unshift(val);
         if(index<0||index>this.length)return null;
-        if(index===this.length)return !!this.push(val);
+        if(index===this.length)return !!this.insert(val);
         else{
             var prev=this.get(index-1);
             var temp=prev.next;
@@ -113,9 +113,9 @@ class doublyLinklyList{
         return this;
     }
 }
-var list=new doublyLinklyList();
-list.unshift('first');
-list.unshift('second');
-list.push('third');
-list.push('fourth');
-list.insert(1,'newFirst');
+var tree=new doublyLinklyList();
+tree.unshift('first');
+tree.unshift('second');
+tree.insert('third');
+tree.insert('fourth');
+tree.insert(1,'newFirst');
