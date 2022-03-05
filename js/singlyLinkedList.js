@@ -115,31 +115,39 @@ class singlyLinkedList{
         this.length--
         console.log(removedNode);
     }
-    reverse(arr){
+    reverse(){
         var node=this.head;
         this.head=this.tail;
         this.tail=node;
         var prev=null;
         var next;
-        for(var i=0;i<arr.length;i++){
+        for(var i=0;i<this.length;i++){
             next=node.next;
+            console.log(next);
             node.next=prev;
             prev=node;
             node=next;
         }
+        return this;
+    }
+    print(){
+        var arr=[];
+        var current=this.head;
+        while(current){
+            arr.push(current.val);
+            current=current.next;
+        }
         return arr;
     }
-}
+}        
 let list=new singlyLinkedList();
-tree.insert('the first');
-tree.insert('second');
-tree.insert('third');
-tree.unshift('zero');
-tree.insert('minizero');
-tree.shift();
-tree.get(3);
-tree.set(2,'newNum');
-tree.insert(3,'yellow');
-tree.remove(2);
-
-
+list.insert('the first');
+list.insert('second');
+list.insert('third');
+list.unshift('zero');
+list.insert('minizero');
+list.shift();
+list.get(3);
+list.set(2,'newNum');
+list.insert(3,'yellow');
+list.remove(2);
