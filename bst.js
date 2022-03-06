@@ -116,6 +116,19 @@ class binarySearchTree{
         }
         return data;
     }
+    dfsInorder(){
+        var data=[];
+        var current=this.root;
+        function traverse(node){
+            if(node.left)traverse(node.left);
+            data.push(node.value);
+            if(node.right)traverse(node.right);
+            
+        }
+        traverse(current);
+        return data;
+    }
+
 }
 
 var list=new binarySearchTree();
